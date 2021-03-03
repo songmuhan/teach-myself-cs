@@ -36,7 +36,7 @@
       	- ```shell
       		$ echo "hello world"
       		$ echo 'hello world'
-      		$ echo hello\world
+      		$ echo hello\ world
       		```
 
       	- ==diff of "" and ''?==
@@ -73,7 +73,7 @@
       - for linux or MacOs : / is the root of the file system, under which all directories and files lie
       - absolute path and relative path
       - ==how does the shell search the path efficiently ?==
-      	- it seems just loop the list of all environment variables, and picks the first match one
+      	- it seems to just loop the list of all environment variables, and picks the first match one
 
     - programs
 
@@ -130,34 +130,38 @@
 
 - Exercises
 
-	- ```shell
-		$ mkdir tmp
-		$ mkdir tmp/missing
-		$ cd tmp/missing
-		$ touch semester 
-		$ echo '#!/bin/sh' > semester   ### note: single quote
-$ echo 'curl --head --silent https://missing.csail.mit.edu' >> semester
-		```
-	
-	- ```shell
-	$ ./semester
-		-rw-r--r--@ 1 songmuhan  staff  61 Mar  2 15:53 semester
-	```
-  
-  	- the semester file are not executable
-  
+  - ```shell
+  	$ mkdir tmp
+  	$ mkdir tmp/missing
+  	$ cd tmp/missing
+  	$ touch semester 
+  	$ echo '#!/bin/sh' > semester   ### note: single quote
+  	$ echo 'curl --head --silent https://missing.csail.mit.edu' >> semester
+  	```
+
+  - ```shell
+  $ ./semester
+  	-rw-r--r--@ 1 songmuhan  staff  61 Mar  2 15:53 semester
+  	```
+  	
+  	- the semester file are not executable without autorization
+  	
   - ```shell
   	$ sh semester
   	$ chmod u+x semseter
-  	$ ./semester
-  	$ stat -x semester | grep -iF modify > last-modified.txt
+  	$./semester
+  	$stat -x semester | grep -iF modify > last-modified.txt
   	```
-  
+
   	
+
   
+
+  ​	
+
   
+
   
-  
-  
+
   
 
