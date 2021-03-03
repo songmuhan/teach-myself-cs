@@ -2,7 +2,8 @@
 
 ## Description
 
-- CS相关的自学笔记
+- my learning document about cs.
+- better reading experience with typora :)
 
 ## Doing
 
