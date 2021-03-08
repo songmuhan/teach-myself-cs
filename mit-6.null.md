@@ -159,9 +159,70 @@
 
   ​	
 
-  
+## Shell Tools and Scripting
 
-  
+### Shell Scripting
 
-  
+- scripting language
+
+  - variables
+
+    ```shell
+    $ foo=bar
+    $ echo "$foo"
+    bar
+    $ echo '$foo'
+    $foo
+    ```
+
+  - function 
+
+  	```shell
+  	mcd(){
+  		mkdir -p "$1"
+  		cd "$1"
+  	}
+  	```
+
+  - exit code
+
+  	- 0 -> everything went OK, else an error occurred
+
+  	```shell
+  	false || echo "Oops, fail"
+  	# Oops, fail
+  	
+  	true || echo "Will not be printed"
+  	#
+  	
+  	true && echo "Things went well"
+  	# Things went well
+  	
+  	false && echo "Will not be printed"
+  	#
+  	
+  	true ; echo "This will always run"
+  	# This will always run
+  	
+  	false ; echo "This will always run"
+  	# This will always run
+  	
+  	```
+
+  	- ; is treated an end of command character
+
+  - ```shell
+    #!/bin/bash
+    echo "Starting program at $(date)"
+    echo "Running program $0 with $# arguments with pid $$"
+    for file in "$@"; do
+    	grep foobar "$file" > /dev/null 2> /dev/null
+    	if [[$? -ne 0]]; then
+    		echo "File $file does not have any foobar, adding one"
+    		echo "# foobar" >> "$file"
+    	fi
+    done
+    ```
+
+    
 
